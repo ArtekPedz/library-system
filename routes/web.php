@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-
+Route::get('/welcome', 'App\Http\Controllers\LoginController@welcome');
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
 Route::get('login/successlogin', 'App\Http\Controllers\LoginController@successlogin');
 Route::post('/login/checklogin','App\Http\Controllers\LoginController@checklogin');

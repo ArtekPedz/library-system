@@ -25,7 +25,6 @@ class LoginController extends Controller
     		
     	);
 
-
     	if(Auth::attempt($user_data))
     	{
     		return view('successlogin');
@@ -34,10 +33,6 @@ class LoginController extends Controller
     	{
     		return back()->with('error', 'bledny email lub haslo');
     	}
-
-    	
-
-
     }
 	
     function successlogin()
@@ -49,5 +44,9 @@ class LoginController extends Controller
     {
     	Auth::logout();
     	return redirect('login');
+    }
+    function welcome()
+    {
+        return view('welcome');
     }
 }
